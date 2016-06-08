@@ -97,4 +97,25 @@ module vertex(height, idler_offset, idler_space) {
   }
 }
 
+// rotate to left face
+module vert_rl() {
+    translate([16, -11, 0]) rotate([0, 0, -30]) children();
+}
+
+// rotate to right face
+module vert_rr() {
+    translate([-16, -11, 0]) rotate([0, 0, 30]) children();
+}
+
+// attach to left face
+module vert_al(width) {
+    rotate([0, 0, 30]) translate([-8.5-width, 11.25, 0]) children();
+}
+
+// attach to right face
+module vert_ar(width) {
+    rotate([0, 0, -30]) translate([8.5, 11.25, 0]) children();
+}
+
 translate([0, 0, 7.5]) vertex(15, idler_offset=0, idler_space=10);
+
